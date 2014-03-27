@@ -33,7 +33,6 @@ function Question(question, answers) {
     this.answers = [];
 }
 
-//test
 // ------- FIND QUESTIONS AND ANSWERS ------- \\
 
 var questionArrayLength = 0;
