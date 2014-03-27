@@ -1,3 +1,4 @@
+/*jslint browser: true, devel: true */
 //Problem! Den fastnar efter ett visst antal frågor i docs. Antar att det beror på att question-"fältet" är tomt i vissa objekt. Gäller att fixa det. Kanske ha en funktion som presenterar frågorna i textform och om de är tomma bara visar tomt? Eller ska man kolla vad det beror på först och försöka förhindra att de kommer in ö.h.t?
 //Beror på att man måste skrolla igenom hela dokumentet innan den söker!!
 //Detta kan göras automatiskt genom element.scrollTop = 1000;, vilket funkar på body normalt, men här behöver jag ha tag på diven kix-appview-editor (det är den som får ändrat värde på scrollTop när jag scrollar) - för att kunna ändra värdet manuellt!
@@ -17,10 +18,11 @@ function scroll() {
     numberScrolls++;
 
     if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
-       clearInterval(interval1);
+        clearInterval(interval1);
         questionsAndOverlay();
     }
 }
+
 
 var interval1 = window.setInterval(scroll, 500);
 
@@ -34,7 +36,6 @@ function Question(question, answers) {
 }
 
 // ------- FIND QUESTIONS AND ANSWERS ------- \\
-
 var questionArrayLength = 0;
 
 function FindQAs() {
@@ -151,13 +152,11 @@ function nextQuestion() {
 
 
 function questionsAndOverlay() {
-    var questionArray = FindQAs();
+    var questionArray = FindQAs()
     AddOverlay();
     document.getElementById("questionText").innerText = CreateQAString(questionArray);
 
 }
-
-
 
 
 
