@@ -8,9 +8,9 @@ The script assumes you have written the questions as numbered lists, each new qu
 Example:
 
 1. How did Einstein die?
-  a. He was shot to death
-  b. with a gun
+    a. He was shot to death
+    b. with a gun
 
 2. What are the two most important things in the world?
-  a. I don't
-  b. know
+    a. I don't
+    b. know
