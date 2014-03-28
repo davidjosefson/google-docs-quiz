@@ -80,6 +80,7 @@ function FindQAs() {
     return questionArray;
 }
 
+
 // ------- OVERLAY ------- \\
 
 //Har precis kopierat upp leftButton i AddOverlayfunktionen. Går nämligen inte att hitta en nyskapad div med getELementById i DOMen.. Så alla divisar måste finnas inuti den diven jag ska lägga till i dokumentet - nästad och klar!
