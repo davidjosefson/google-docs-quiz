@@ -69,10 +69,6 @@ function FindQAs() {
                 }
             }
 
-
-
-
-
             //Saves the question-object in an array
             questionArray.push(question);
         }
