@@ -9,25 +9,33 @@
 
 // ------- SCROLL THROUGH PAGE ------- \\
 
-var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
-var scrollHeight = 1500;    //How many lines(?) it should scroll each time
-var numberScrolls = 1;
+RunItAll();
 
-//Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
-function scroll() {
-    var div = document.getElementsByClassName("kix-appview-editor");
+function RunItAll() {
 
-    div[0].scrollTop += scrollHeight;
-    numberScrolls++;
+    var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
+    var scrollHeight = 1500;    //How many lines(?) it should scroll each time
+    var numberScrolls = 1;
 
-    if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
-        clearInterval(interval1);
-        questionsAndOverlay();
+    //Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
+    function scroll() {
+        var div = document.getElementsByClassName("kix-appview-editor");
+
+        div[0].scrollTop += scrollHeight;
+        numberScrolls++;
+
+        if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
+            clearInterval(interval1);
+            questionsAndOverlay();
+        }
     }
+
+    //Defines how much it should wait between each run of the scroll-function
+    var interval1 = window.setInterval(scroll, scrollIntervalMs);
+
 }
 
-//Defines how much it should wait between each run of the scroll-function
-var interval1 = window.setInterval(scroll, scrollIntervalMs);
+
 
 
 // ------- QUESTION CONSTRUCTOR ------- \\
@@ -155,9 +163,9 @@ function nextQuestion() {
 
 
 function questionsAndOverlay() {
-    var questionArray = FindQAs()
+    var questionArray = FindQAs();
     AddOverlay();
-    document.getElementById("questionText").innerText = "Så här många frågor hittades: " +questionArray.length + "!";
+    document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + "!";
 
 }
 
