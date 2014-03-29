@@ -8,13 +8,16 @@
 //Okej, sidan kan scrolla, najs. Nu måste jag få resten av koden att vänta med att exekveras tills scroll-grejen är klar.
 
 // ------- SCROLL THROUGH PAGE ------- \\
-var numberScrolls = 1;
-//var isScrolled = false;
 
+var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
+var scrollHeight = 1500;    //How many lines(?) it should scroll each time
+var numberScrolls = 1;
+
+//Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
 function scroll() {
     var div = document.getElementsByClassName("kix-appview-editor");
 
-    div[0].scrollTop += 1500;
+    div[0].scrollTop += scrollHeight;
     numberScrolls++;
 
     if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
@@ -23,8 +26,8 @@ function scroll() {
     }
 }
 
-
-var interval1 = window.setInterval(scroll, 200);
+//Defines how much it should wait between each run of the scroll-function
+var interval1 = window.setInterval(scroll, scrollIntervalMs);
 
 
 // ------- QUESTION CONSTRUCTOR ------- \\
