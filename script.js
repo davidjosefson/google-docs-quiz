@@ -14,7 +14,7 @@ var numberScrolls = 1;
 function scroll() {
     var div = document.getElementsByClassName("kix-appview-editor");
 
-    div[0].scrollTop += 200;
+    div[0].scrollTop += 1500;
     numberScrolls++;
 
     if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
@@ -24,7 +24,7 @@ function scroll() {
 }
 
 
-var interval1 = window.setInterval(scroll, 500);
+var interval1 = window.setInterval(scroll, 200);
 
 
 // ------- QUESTION CONSTRUCTOR ------- \\
