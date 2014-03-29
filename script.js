@@ -26,7 +26,7 @@ function RunItAll() {
 
         if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
             clearInterval(interval1);
-            questionsAndOverlay();
+            questionsAndOverlay();  //OBS! HÄR LÄGGS OVERLAYEN IN I NULÄGET!!
         }
     }
 
@@ -143,6 +143,7 @@ function AddOverlay() {
 //var questionArray = [];
 var currentQuestion = 0;
 
+//HÄR ÄR PROBLEMET, QUESTIONARRAY:EN LIGGER LOKALT INUTI FUNKTIONEN QUESTIONSANDOVERLAY() UNDER DESSA TVÅ!
 function previousQuestion() {
     if(currentQuestion > 0) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion - 1].question;
@@ -161,7 +162,7 @@ function nextQuestion() {
         console.log("Du är vid max!");
 }
 
-
+//HÄR LIGGER QUESTIONARRAYEN LOKALT..
 function questionsAndOverlay() {
     var questionArray = FindQAs();
     AddOverlay();
