@@ -30,7 +30,7 @@ var interval1 = window.setInterval(scroll, 200);
 // ------- QUESTION CONSTRUCTOR ------- \\
 
 //Question-constructor with a question-string and answers-array
-function Question(question, answers) {
+function Question(question) {
     this.question = question;
     this.answers = [];
 }
