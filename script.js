@@ -154,7 +154,7 @@ function nextQuestion() {
 function questionsAndOverlay() {
     var questionArray = FindQAs()
     AddOverlay();
-    document.getElementById("questionText").innerText = "Så här många frågor/svar hittades: " +questionArray.length;
+    document.getElementById("questionText").innerText = "Så här många frågor hittades: " +questionArray.length + "!";
 
 }
 
