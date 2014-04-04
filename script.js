@@ -7,12 +7,8 @@
 
 //Okej, sidan kan scrolla, najs. Nu måste jag få resten av koden att vänta med att exekveras tills scroll-grejen är klar.
 
-function initializeDocument() {
+function scrollPage(callback) {
 
-
-}
-
-// ------- SCROLL THROUGH PAGE ------- \\
 var done = false;
 var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
 var scrollHeight = 1500;    //How many lines(?) it should scroll each time
@@ -30,13 +26,19 @@ function scroll() {
 
     if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
         clearInterval(interval1);
-        done = true;  //OBS! HÄR LÄGGS OVERLAYEN IN I NULÄGET!!
+        callback();    //done = true;  //OBS! HÄR LÄGGS OVERLAYEN IN I NULÄGET!!
     }
 }
 
-if(done === true) {
-    questionsAndOverlay();
+
+    //callback();
 }
+
+// ------- SCROLL THROUGH PAGE ------- \\
+
+
+scrollPage(questionsAndOverlay()); //    questionsAndOverlay();
+
 
 // ------- QUESTION CONSTRUCTOR ------- \\
 
