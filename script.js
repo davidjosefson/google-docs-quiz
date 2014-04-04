@@ -24,7 +24,7 @@ var numberScrolls = 1;
 //Defines how much it should wait between each run of the scroll-function
 var interval1 = window.setInterval(scroll, scrollIntervalMs);
 
-while(div[0].scrollHeight - div[0].scrollTop != div[0].clientHeight) {
+if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
     clearInterval(interval1);
 }
 
