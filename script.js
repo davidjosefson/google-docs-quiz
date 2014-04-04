@@ -37,7 +37,7 @@ function scroll() {
 // ------- SCROLL THROUGH PAGE ------- \\
 
 
-scrollPage(questionsAndOverlay()); //    questionsAndOverlay();
+scrollPage(questionsAndOverlay); //    questionsAndOverlay();
 
 
 // ------- QUESTION CONSTRUCTOR ------- \\
