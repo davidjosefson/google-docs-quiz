@@ -205,8 +205,9 @@ function CreateQAString(arrayIn) {
 //Kommenterar bort denna så länge. Verkar som att button-divarna inte vill synas när denna finns med.. Skumt.
 //document.getElementById("questionText").innerText = questionArray[currentQuestion].question;
 
-
-
+/*
+javascript:(function(){var script=document.createElement('script'); script.type='text/javascript'; script.src = encodeURI( 'https://raw.githubusercontent.com/davidjosefson/google-docs-quiz/master/script.js?v='+Math.random());document.body.appendChild(script)})()
+*/
 
 //output[1].innerHTML += '<div id="output"></div>';
 /*document.getElementById("output").innerText += questionArray[0].question;
