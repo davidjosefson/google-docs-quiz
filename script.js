@@ -7,11 +7,16 @@
 
 //Okej, sidan kan scrolla, najs. Nu måste jag få resten av koden att vänta med att exekveras tills scroll-grejen är klar.
 
+
+// ------- SCROLL THROUGH PAGE ------- \\
+
+//Scrolls through the page and then runs  questionsAndOverlay()
+scrollPage(questionsAndOverlay);
+
 //Scrolls the page, and runs the callback-function when it has reached the bottom
-function scrollPage(callback) {
+function scrollPage(callback1, callback2) {
     var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
     var scrollHeight = 1500;    //How many lines(?) it should scroll each time
-    //var numberScrolls = 1;
 
     //Defines how much it should wait between each run of the scroll-function
     var interval1 = window.setInterval(scroll, scrollIntervalMs);
@@ -21,22 +26,16 @@ function scrollPage(callback) {
         var div = document.getElementsByClassName("kix-appview-editor");
 
         div[0].scrollTop += scrollHeight;
-        //numberScrolls++;
 
         //When it has reached the bottom:
         if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
-            //Stop the loop
-            clearInterval(interval1);
-            //Run the callback-function (function of your choice as a parameter)
-            callback();    //runs the chosen function when
+            clearInterval(interval1);   //Stop the loop
+            callback1();                //Run the callback-function nr 1 (function of your choice as a parameter)
+            callback2();                //Run the callback-function nr 2 (function of your choice as a parameter)
         }
     }
 }
 
-// ------- SCROLL THROUGH PAGE ------- \\
-
-//Scrolls through the page and then runs  questionsAndOverlay()
-scrollPage(questionsAndOverlay);
 
 
 // ------- QUESTION CONSTRUCTOR ------- \\
@@ -162,10 +161,11 @@ function nextQuestion() {
     else
         console.log("Du är vid max!");
 }
+var questionArray;
 
 //HÄR LIGGER QUESTIONARRAYEN LOKALT..
 function questionsAndOverlay() {
-    var questionArray = FindQAs();
+    questionArray = FindQAs();
     AddOverlay();
     document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
 
