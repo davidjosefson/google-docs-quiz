@@ -11,18 +11,18 @@
 // ------- SCROLL THROUGH PAGE ------- \\
 
 //Scrolls through the page and then runs  FindQuestionsAddOverlay()
-scrollPage(FindQuestionsAddOverlay);
+ScrollToBottom(FindQuestionsAddOverlay);
 
 //Scrolls the page, and runs the callback-function when it has reached the bottom
-function scrollPage(callback1, callback2) {
+function ScrollToBottom(callback1, callback2) {
     var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
     var scrollHeight = 1500;    //How many lines(?) it should scroll each time
 
     //Defines how much it should wait between each run of the scroll-function
-    var interval1 = window.setInterval(scrollt, scrollIntervalMs);
+    var interval1 = window.setInterval(scrollDown, scrollIntervalMs);
 
     //Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
-    function scrollt() {
+    function scrollDown() {
         var div = document.getElementsByClassName("kix-appview-editor");
 
         div[0].scrollTop += scrollHeight;
