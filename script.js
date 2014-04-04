@@ -37,6 +37,14 @@ function ScrollToBottom(callback1, callback2) {
 }
 
 
+var questionArray;
+
+function FindQuestionsAddOverlay() {
+    questionArray = FindQAs();
+    AddOverlay();
+    document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
+
+}
 
 // ------- QUESTION CONSTRUCTOR ------- \\
 
@@ -143,7 +151,7 @@ function AddOverlay() {
 //var questionArray = [];
 var currentQuestion = 0;
 
-//HÄR ÄR PROBLEMET, QUESTIONARRAY:EN LIGGER LOKALT INUTI FUNKTIONEN FindQuestionsAddOverlay() UNDER DESSA TVÅ!
+
 function previousQuestion() {
     if(currentQuestion > 0) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion - 1].question;
@@ -161,21 +169,6 @@ function nextQuestion() {
     else
         console.log("Du är vid max!");
 }
-var questionArray;
-
-//HÄR LIGGER QUESTIONARRAYEN LOKALT..
-function FindQuestionsAddOverlay() {
-    questionArray = FindQAs();
-    AddOverlay();
-    document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
-
-}
-
-
-
-// ------- OVERLAY BUTTONS ------- \\
-
-
 
 
 // ------- CREATE Q&A-STRING ------- \\
