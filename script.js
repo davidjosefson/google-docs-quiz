@@ -10,8 +10,8 @@
 
 // ------- SCROLL THROUGH PAGE ------- \\
 
-//Scrolls through the page and then runs  questionsAndOverlay()
-scrollPage(questionsAndOverlay);
+//Scrolls through the page and then runs  FindQuestionsAddOverlay()
+scrollPage(FindQuestionsAddOverlay);
 
 //Scrolls the page, and runs the callback-function when it has reached the bottom
 function scrollPage(callback1, callback2) {
@@ -19,10 +19,10 @@ function scrollPage(callback1, callback2) {
     var scrollHeight = 1500;    //How many lines(?) it should scroll each time
 
     //Defines how much it should wait between each run of the scroll-function
-    var interval1 = window.setInterval(scroll, scrollIntervalMs);
+    var interval1 = window.setInterval(scrollt, scrollIntervalMs);
 
     //Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
-    function scroll() {
+    function scrollt() {
         var div = document.getElementsByClassName("kix-appview-editor");
 
         div[0].scrollTop += scrollHeight;
@@ -143,7 +143,7 @@ function AddOverlay() {
 //var questionArray = [];
 var currentQuestion = 0;
 
-//HÄR ÄR PROBLEMET, QUESTIONARRAY:EN LIGGER LOKALT INUTI FUNKTIONEN QUESTIONSANDOVERLAY() UNDER DESSA TVÅ!
+//HÄR ÄR PROBLEMET, QUESTIONARRAY:EN LIGGER LOKALT INUTI FUNKTIONEN FindQuestionsAddOverlay() UNDER DESSA TVÅ!
 function previousQuestion() {
     if(currentQuestion > 0) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion - 1].question;
@@ -164,7 +164,7 @@ function nextQuestion() {
 var questionArray;
 
 //HÄR LIGGER QUESTIONARRAYEN LOKALT..
-function questionsAndOverlay() {
+function FindQuestionsAddOverlay() {
     questionArray = FindQAs();
     AddOverlay();
     document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
