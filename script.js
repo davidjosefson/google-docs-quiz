@@ -13,30 +13,33 @@ RunItAll();
 
 function RunItAll() {
 
-    var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
-    var scrollHeight = 1500;    //How many lines(?) it should scroll each time
-    var numberScrolls = 1;
 
-    //Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
-    function scroll() {
-        var div = document.getElementsByClassName("kix-appview-editor");
-
-        div[0].scrollTop += scrollHeight;
-        numberScrolls++;
-
-        if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
-            clearInterval(interval1);
-            questionsAndOverlay();  //OBS! HÄR LÄGGS OVERLAYEN IN I NULÄGET!!
-        }
-    }
-
-    //Defines how much it should wait between each run of the scroll-function
-    var interval1 = window.setInterval(scroll, scrollIntervalMs);
 
 }
 
+var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
+var scrollHeight = 1500;    //How many lines(?) it should scroll each time
+var numberScrolls = 1;
 
+//Defines how much it should wait between each run of the scroll-function
+var interval1 = window.setInterval(scroll, scrollIntervalMs);
 
+while(div[0].scrollHeight - div[0].scrollTop != div[0].clientHeight) {
+    clearInterval(interval1);
+}
+
+//Scroll function which scrolls through the main div (kix-appview-editor) of the Docs-document
+function scroll() {
+    var div = document.getElementsByClassName("kix-appview-editor");
+
+    div[0].scrollTop += scrollHeight;
+    numberScrolls++;
+
+    /*if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
+        clearInterval(interval1);
+        return true;  //OBS! HÄR LÄGGS OVERLAYEN IN I NULÄGET!!
+    }*/
+}
 
 
 
