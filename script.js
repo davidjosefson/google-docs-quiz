@@ -14,7 +14,7 @@
 ScrollToBottom(FindQuestionsAddOverlay);
 
 //Scrolls the page, and runs the callback-function when it has reached the bottom
-function ScrollToBottom(callback1) {
+function ScrollToBottom(callback) {
     var scrollIntervalMs = 200; //How fast it should scroll (how many ms it should wait before running Scroll() again)
     var scrollHeight = 1500;    //How many lines(?) it should scroll each time
 
@@ -30,8 +30,7 @@ function ScrollToBottom(callback1) {
         //When it has reached the bottom:
         if(div[0].scrollHeight - div[0].scrollTop === div[0].clientHeight) {
             clearInterval(interval1);   //Stop the loop
-            callback1();                //Run the callback-function nr 1 (function of your choice as a parameter)
-            //callback2();                //Run the callback-function nr 2 (function of your choice as a parameter)
+            callback();                //Run the callback-function (function of your choice as a parameter)
         }
     }
 }
@@ -42,7 +41,7 @@ var questionArray;
 function FindQuestionsAddOverlay() {
     questionArray = FindQAs();
     AddOverlay();
-    //document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
+    document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
 
 }
 
