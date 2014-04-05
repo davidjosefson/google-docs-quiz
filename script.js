@@ -140,7 +140,7 @@ function AddOverlay() {
     questionText.style.cssText = questionTextStyleString;
     buttonLeft.style.cssText = buttonLeftStyleString;
     buttonRight.style.cssText = buttonRightStyleString;
-    buttonExit.style.csssText = buttonExitStyleString;
+    buttonExit.style.cssText = buttonExitStyleString;
 
     //Adds some text (later a question)
     questionText.textContent = "1. Fråga ett om jag får be!";
