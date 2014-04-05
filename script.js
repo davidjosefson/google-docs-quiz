@@ -175,7 +175,7 @@ function previousQuestion() {
 function nextQuestion() {
     if(currentQuestion < questionArray.length - 1) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion + 1].question;
-        document.getElementById("answersText").textContent = CreateAnswerString(questionArray[currentQuestion + 1].answers);
+        document.getElementById("answersText").innerText = CreateAnswerString(questionArray[currentQuestion + 1].answers);
         currentQuestion += 1;
     }
     else
