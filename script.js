@@ -1,11 +1,10 @@
-/*jslint browser: true, devel: true */
-//Problem! Den fastnar efter ett visst antal frågor i docs. Antar att det beror på att question-"fältet" är tomt i vissa objekt. Gäller att fixa det. Kanske ha en funktion som presenterar frågorna i textform och om de är tomma bara visar tomt? Eller ska man kolla vad det beror på först och försöka förhindra att de kommer in ö.h.t?
-//Beror på att man måste skrolla igenom hela dokumentet innan den söker!!
-//Detta kan göras automatiskt genom element.scrollTop = 1000;, vilket funkar på body normalt, men här behöver jag ha tag på diven kix-appview-editor (det är den som får ändrat värde på scrollTop när jag scrollar) - för att kunna ändra värdet manuellt!
-//Men... jag kan inte få tag på diven, får "undefined" när jag köttar in: document.getElementsByClassName("kix-appview-editor"); ...
-//..faaaast det får jag med "var htmlArray = document.getElementsByClassName('kix-lineview-content');" också, så det är inte något fel i sig! Najs.
+// --- TODO-LIST --- \\
 
-//Okej, sidan kan scrolla, najs. Nu måste jag få resten av koden att vänta med att exekveras tills scroll-grejen är klar.
+//TODO Fixa så att sidan inte skrollar om den redan gjort det (en global var av nåt slag?
+//TODO Lägg in svaren i egen div
+//TODO Svars-diven ska vara dold om man inte klickar på något speciellt, event-grej för att kunna koppla KYBD-shortcut senare
+//TODO Fixa KYBD-shortcuts!
+
 
 
 // ------- SCROLL THROUGH PAGE ------- \\
@@ -107,12 +106,14 @@ function AddOverlay() {
     //Creates the overlay-div
     var overlay = document.createElement("div");
     var questionText = document.createElement("div");
+    var answersText = document.createElement("div");
     var buttonLeft = document.createElement("input");
     var buttonRight = document.createElement("input");
     var buttonExit = document.createElement("input");
 
     overlay.setAttribute("id", "overlay");
     questionText.setAttribute("id", "questionText");
+    answersText.setAttribute("id", "answersText");
 
     buttonLeft.setAttribute("id", "buttonLeft");
     buttonLeft.setAttribute("type", "button");
@@ -131,6 +132,7 @@ function AddOverlay() {
 
     var overlayStyleString = "color: red; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 80%; height: 80%; background-color: #000; opacity: .7; filter: alpha(opacity=70); z-index: 10000; overflow: hidden;";
     var questionTextStyleString = "color: white; position: absolute; top: 20px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 60px; background-color: red; z-index: 10000;";
+    var answersTextStyleString = "color: white; position: absolute; top: 60px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 500px; background-color: white; z-index: 10000;";
     var buttonLeftStyleString = "position: absolute; top: 45%; bottom: 0; left: 10px; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
     var buttonRightStyleString = "position: absolute; top: 45%; bottom: 0; left: 90%; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
     var buttonExitStyleString = "position: absolute; top: 5%; bottom: 0; left: 95%; right: 0; width: 30px; height: 30px; background-color: purple; z-index: 10000;";
@@ -138,15 +140,17 @@ function AddOverlay() {
     //Sets the string as css for the buttonLeft-div
     overlay.style.cssText = overlayStyleString;
     questionText.style.cssText = questionTextStyleString;
+    answersText.style.cssText = answersTextStyleString;
     buttonLeft.style.cssText = buttonLeftStyleString;
     buttonRight.style.cssText = buttonRightStyleString;
     buttonExit.style.cssText = buttonExitStyleString;
 
     //Adds some text (later a question)
     questionText.textContent = "1. Fråga ett om jag får be!";
-
+    answersText.textContent = "Svar 1 om jag får be!";
 
     overlay.appendChild(questionText);
+    overlay.appendChild(answersText);
     overlay.appendChild(buttonLeft);
     overlay.appendChild(buttonRight);
     overlay.appendChild(buttonExit);
