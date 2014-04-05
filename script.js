@@ -133,7 +133,7 @@ function AddOverlay() {
 
     var overlayStyleString = "color: red; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 80%; height: 80%; background-color: #000; opacity: .7; filter: alpha(opacity=70); z-index: 10000; overflow: hidden;";
     var questionTextStyleString = "color: white; position: absolute; top: 20px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 60px; background-color: red; z-index: 10000;";
-    var answersTextStyleString = "color: white; position: absolute; top: 60px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 500px; background-color: white; z-index: 10000;";
+    var answersTextStyleString = "color: black; position: absolute; top: 60px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 500px; background-color: white; z-index: 10000;";
     var buttonLeftStyleString = "position: absolute; top: 45%; bottom: 0; left: 10px; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
     var buttonRightStyleString = "position: absolute; top: 45%; bottom: 0; left: 90%; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
     var buttonExitStyleString = "position: absolute; top: 5%; bottom: 0; left: 95%; right: 0; width: 30px; height: 30px; background-color: purple; z-index: 10000;";
