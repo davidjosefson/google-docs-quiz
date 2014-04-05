@@ -41,7 +41,7 @@ var questionArray;
 
 function FindQuestionsAddOverlay() {
     questionArray = FindQAs();
-    //AddOverlay();
+    AddOverlay();
     //document.getElementById("questionText").innerText = "Så här många frågor hittades: " + questionArray.length + " av 44 st totalt!";
 
 }
