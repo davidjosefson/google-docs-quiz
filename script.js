@@ -109,6 +109,7 @@ function AddOverlay() {
     var questionText = document.createElement("div");
     var buttonLeft = document.createElement("input");
     var buttonRight = document.createElement("input");
+    var buttonExit = document.createElement("input");
 
     overlay.setAttribute("id", "overlay");
     questionText.setAttribute("id", "questionText");
@@ -123,17 +124,23 @@ function AddOverlay() {
     buttonRight.setAttribute("value", ">");
     buttonRight.setAttribute("onclick", "nextQuestion()");
 
+    buttonExit.setAttribute("id", "buttonExit");
+    buttonExit.setAttribute("type", "button");
+    buttonExit.setAttribute("value", "X");
+    buttonExit.setAttribute("onclick", "removeOverlay()");
+
     var overlayStyleString = "color: red; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 80%; height: 80%; background-color: #000; opacity: .7; filter: alpha(opacity=70); z-index: 10000; overflow: hidden;";
-    var questionTextStyleString = "color: white; position: absolute; top: 20px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 60px; background-color: red; 1 z-index: 10000;";
-    var buttonLeftStyleString = "position: absolute; top: 45%; bottom: 0; left: 10px; right: 0; width: 30px; height: 30px; background-color: blue;1 z-index: 10000;";
-    var buttonRightStyleString = "position: absolute; top: 45%; bottom: 0; left: 90%; right: 0; width: 30px; height: 30px; background-color: blue;1 z-index: 10000;";
+    var questionTextStyleString = "color: white; position: absolute; top: 20px; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right:auto; width: 90%; height: 60px; background-color: red; z-index: 10000;";
+    var buttonLeftStyleString = "position: absolute; top: 45%; bottom: 0; left: 10px; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
+    var buttonRightStyleString = "position: absolute; top: 45%; bottom: 0; left: 90%; right: 0; width: 30px; height: 30px; background-color: blue; z-index: 10000;";
+    var buttonExitStyleString = "position: absolute; top: 5px; bottom: 0; left: 90%; right: 0; width: 30px; height: 30px; background-color: pink; z-index: 10000;";
 
     //Sets the string as css for the buttonLeft-div
     overlay.style.cssText = overlayStyleString;
     questionText.style.cssText = questionTextStyleString;
     buttonLeft.style.cssText = buttonLeftStyleString;
     buttonRight.style.cssText = buttonRightStyleString;
-
+    buttonExit.style.csssText = buttonExitStyleString;
 
     //Adds some text (later a question)
     questionText.textContent = "1. Fråga ett om jag får be!";
@@ -142,7 +149,7 @@ function AddOverlay() {
     overlay.appendChild(questionText);
     overlay.appendChild(buttonLeft);
     overlay.appendChild(buttonRight);
-
+    overlay.appendChild(buttonExit);
 
     //Inserts the overlay-div in the html body
     document.body.appendChild(overlay);
@@ -169,6 +176,10 @@ function nextQuestion() {
         console.log("Du är vid max!");
 }
 
+function removeOverlay(){
+    var div = document.getElementById("overlay");
+    div.parentNode.removeChild(div);
+}
 
 // ------- CREATE Q&A-STRING ------- \\
 
