@@ -1,3 +1,4 @@
+/*jslint browser: true, devel: true, todo: true */
 // --- TODO-LIST --- \\
 
 //TODO Fixa så att sidan inte skrollar om den redan gjort det (en global var av nåt slag?
@@ -174,6 +175,7 @@ function previousQuestion() {
 function nextQuestion() {
     if(currentQuestion < questionArray.length - 1) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion + 1].question;
+        document.getElementById("answersText").textContent = CreateAnswerString(questionArray[currentQuestion + 1].answers);
         currentQuestion += 1;
     }
     else
@@ -205,7 +207,14 @@ function CreateQAString(arrayIn) {
     return stringQA;
 }
 
+function CreateAnswerString(arrayIn) {
+    var answer;
+    for(var i = 0; i < arrayIn.length; i++) {
+        answer += arrayIn[i] + "\n";
+    }
 
+    return answer;
+}
 
 // ------- DISPLAY Q&As IN OVERLAY ------- \\
 
