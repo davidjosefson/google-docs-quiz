@@ -166,6 +166,7 @@ var currentQuestion = 0;
 function previousQuestion() {
     if(currentQuestion > 0) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion - 1].question;
+        document.getElementById("answersText").innerText = CreateAnswerString(questionArray[currentQuestion - 1].answers);
         currentQuestion -= 1;
     }
     else
@@ -175,6 +176,7 @@ function previousQuestion() {
 function nextQuestion() {
     if(currentQuestion < questionArray.length - 1) {
         document.getElementById("questionText").textContent = questionArray[currentQuestion + 1].question;
+        //debugger;
         document.getElementById("answersText").innerText = CreateAnswerString(questionArray[currentQuestion + 1].answers);
         currentQuestion += 1;
     }
@@ -208,7 +210,7 @@ function CreateQAString(arrayIn) {
 }
 
 function CreateAnswerString(arrayIn) {
-    var answer;
+    var answer = "";
     for(var i = 0; i < arrayIn.length; i++) {
         answer += arrayIn[i] + "\n";
     }
