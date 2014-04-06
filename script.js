@@ -2,9 +2,12 @@
 // --- TODO-LIST --- \\
 
 //TODO Fixa så att sidan inte skrollar om den redan gjort det (en global var av nåt slag?
-//TODO Lägg in svaren i egen div
+//TODO [x]Lägg in svaren i egen div
 //TODO Svars-diven ska vara dold om man inte klickar på något speciellt, event-grej för att kunna koppla KYBD-shortcut senare
 //TODO Fixa KYBD-shortcuts!
+//TODO Random frågor
+//TODO Extern css-fil
+//FIXME Frågan "funktionella krav-stilar (inte datakrav-stilar alltså)" byter rad, och då blir halva frågan ett svar!
 
 
 
