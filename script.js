@@ -8,7 +8,7 @@
 //TODO Random frågor
 //TODO [x]Extern css-fil
 //TODO Ta bort cssen från js-filen och lägg in i style.css istället
-//TOOD Fixa Github PAGES, så att man kan ladda in cssen därifrån istället för från rawgithub.com..
+//TODO Fixa Github PAGES, så att man kan ladda in cssen därifrån istället för från rawgithub.com..
 //FIXME Frågan "funktionella krav-stilar (inte datakrav-stilar alltså)" byter rad, och då blir halva frågan ett svar!
 
 
