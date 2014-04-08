@@ -19,7 +19,7 @@ function LoadCSS() {
     head.appendChild(link);
 }
 
-LoadCSS();
+//LoadCSS();
 
 // ------- SCROLL THROUGH PAGE ------- \\
 
@@ -132,7 +132,8 @@ function AddOverlay() {
     buttonLeft.setAttribute("id", "buttonLeft");
     buttonLeft.setAttribute("type", "button");
     buttonLeft.setAttribute("value", "<");
-    buttonLeft.setAttribute("onclick", "previousQuestion()");
+    //buttonLeft.setAttribute("onclick", "previousQuestion()");
+    buttonLeft.setAttribute("onclick", "LoadCSS()");
 
     buttonRight.setAttribute("id", "buttonRight");
     buttonRight.setAttribute("type", "button");
