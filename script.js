@@ -10,6 +10,14 @@
 //FIXME Frågan "funktionella krav-stilar (inte datakrav-stilar alltså)" byter rad, och då blir halva frågan ett svar!
 
 
+function LoadCSS() {
+    var head = document.getElementsByTagName("head")[0];
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "https://raw.githubusercontent.com/davidjosefson/google-docs-quiz/master/style.css";
+    head.appendChild(link);
+}
 
 // ------- SCROLL THROUGH PAGE ------- \\
 
