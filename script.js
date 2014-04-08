@@ -15,7 +15,7 @@ function LoadCSS() {
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.type = "text/css";
-    link.href = "http://rawgithub.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
+    link.href = "https://rawgithub.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
     head.appendChild(link);
 }
 
