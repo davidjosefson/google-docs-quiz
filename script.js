@@ -8,6 +8,7 @@
 //TODO Random frågor
 //TODO [x]Extern css-fil
 //TODO Ta bort cssen från js-filen och lägg in i style.css istället
+//TOOD Fixa Github PAGES, så att man kan ladda in cssen därifrån istället för från rawgithub.com..
 //FIXME Frågan "funktionella krav-stilar (inte datakrav-stilar alltså)" byter rad, och då blir halva frågan ett svar!
 
 
@@ -17,7 +18,7 @@ function LoadCSS() {
     link.rel = "stylesheet";
     link.type = "text/css";
     //Rawgithub.com is a service to allow
-    link.href = "https://raw.githubusercontent.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
+    link.href = "https://rawgithub.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
     head.appendChild(link);
 }
 
