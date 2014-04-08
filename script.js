@@ -19,6 +19,8 @@ function LoadCSS() {
     head.appendChild(link);
 }
 
+LoadCSS();
+
 // ------- SCROLL THROUGH PAGE ------- \\
 
 //Scrolls through the page and then runs  FindQuestionsAddOverlay()
