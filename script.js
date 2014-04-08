@@ -15,11 +15,11 @@ function LoadCSS() {
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.type = "text/css";
-    link.href = "https://raw.githubusercontent.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
+    link.href = "http://rawgithub.com/davidjosefson/google-docs-quiz/master/style.css?v=" + Math.random();
     head.appendChild(link);
 }
 
-//LoadCSS();
+LoadCSS();
 
 // ------- SCROLL THROUGH PAGE ------- \\
 
@@ -132,8 +132,7 @@ function AddOverlay() {
     buttonLeft.setAttribute("id", "buttonLeft");
     buttonLeft.setAttribute("type", "button");
     buttonLeft.setAttribute("value", "<");
-    //buttonLeft.setAttribute("onclick", "previousQuestion()");
-    buttonLeft.setAttribute("onclick", "LoadCSS()");
+    buttonLeft.setAttribute("onclick", "previousQuestion()");
 
     buttonRight.setAttribute("id", "buttonRight");
     buttonRight.setAttribute("type", "button");
