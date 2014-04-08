@@ -5,3 +5,7 @@ p {
 #answersText {
     color: blue;
 }
+
+#overlay {
+    background-color: blue;
+}
