@@ -6,7 +6,8 @@
 //TODO Svars-diven ska vara dold om man inte klickar på något speciellt, event-grej för att kunna koppla KYBD-shortcut senare
 //TODO Fixa KYBD-shortcuts!
 //TODO Random frågor
-//TODO Extern css-fil
+//TODO [x]Extern css-fil
+//TODO Ta bort cssen från js-filen och lägg in i style.css istället
 //FIXME Frågan "funktionella krav-stilar (inte datakrav-stilar alltså)" byter rad, och då blir halva frågan ett svar!
 
 
